@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/favicon.png" type="image/png">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap" rel="stylesheet">
+    <title>Esculp - Cadastre-se</title>
+</head>
+<body>
+
+```
+<header class="site-header">
+    <a href="/" class="icone-container">
+        <img src="imagens/icone.png" alt="Logo do Site" class="site-logo">
+        <span class="site-nome">Esculp</span>
+    </a>
+</header>
+
+<h1 id="h1-cadastro">Seu primeiro emprego está a um clique de distância</h1>
+<p id="p-cadastro">Cadastre-se gratuitamente e descubra oportunidades feitas para quem está dando os primeiros passos no mercado de trabalho.</p>
+
+<form id="formulario">
+    <div class="step active"> <!-- Etapa 1 - informações de login -->
+        <h2>Informações para login</h2>
+        <p>preencha as informações a baixo:</p>
+
+        <div class="inputs-container">
+            
+            <div> <!colocar o email>
+                <label for="email">Digite seu e-mail:</label>
+                <input type="email" id="email" required />
+            </div>
+
+            <div><!colocar a senha>
+                <label for="senha">Digite sua senha:</label>
+                <input type="password" id="senha" required />
+            </div>
+
+            <div><!confirmar senha>
+                <label for="confirmar-senha">Confirme sua senha:</label>
+                <input type="password" id="confirmar-senha" required />
+            </div>
+
+            <div><!colocar o telefone>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required />
+            </div>
+
+        </div>
+
+        <button type="button" onclick="proximaEtapa()">Continuar</button>
+
+    </div>
+
+    <div class="step"> <!-- Etapa 2 -->
+        <h2>Dados Pessoais</h2>
+        <p>preencha as informações a baixo:</p>
+
+        <div class="inputs-container">
+            <div><!colocar o nome>
+                <label for="Nome completo">Nome completo:</label>
+                <input type="text" id="Nome-completo" name="Nome completo" required />
+            </div>
+
+            <div><!colocar o nascimento>
+                <label for="Data de nascimento">Data de nascimento:</label>
+                <input type="date" id="Data-nascimento" name="Data de nascimento" required />
+            </div>
+            
+            <div><!colocar o cpf>
+                <label for="CPF">CPF:</label>
+                <input type="text" id="cpf" name="cpf" maxlength="14" required />
+            </div>
+
+            <div><!colocar o bairro>
+                <label for="Bairro">Bairro:</label>
+                <input type="text" id="Bairro" name="Bairro" required />
+            </div>
+
+            <div><!colocar a rua>
+                <label for="Rua">Rua:</label>
+                <input type="text" id="Rua" name="Rua" required />
+            </div>
+
+            <div><!colocar o numero da casa>
+                <label for="Número">Número:</label>
+                <input type="text" id="Numero" name="Número" required />
+            </div>
+
+            <div><!colocar a cidade>
+                <label for="Cidade">Cidade:</label>
+                <input type="text" id="Cidade" name="Cidade" required />
+            </div>
+
+            <div><!colocar o estado>
+                <label for="Estado">Estado:</label>
+                <input type="text" id="Estado" name="Estado" required />
+            </div>
+        </div>
+
+      <div class="botoes">
+          <button type="button" onclick="voltarEtapa()">Voltar</button>
+          <button type="button" onclick="proximaEtapa()">Continuar</button>
+      </div>
+
+    </div>
+
+    <div class="step"> 
+        <!-- Etapa 3 -->
+        <h2>Informações Educacionais</h2>
+        <p>Preencha as informações abaixo:</p>
+    
+        <div class="inputs-container">
+    
+            <!-- Bloco 1: Seleção geral do nível de escolaridade do usuário -->
+            <!-- Este campo aparece sempre -->
+            <div>
+                <label for="escolaridade">Nível de escolaridade:</label>
+                <select name="escolaridade" id="escolaridade" required>
+                    <option value="">Selecione</option>
+                    <option value="fundamental_incompleto">Fundamental incompleto</option>
+                    <option value="fundamental_completo">Fundamental completo</option>
+                    <option value="medio_incompleto">Médio incompleto</option>
+                    <option value="medio_completo">Médio completo</option>
+                    <option value="superior_incompleto">Superior incompleto</option>
+                    <option value="superior_completo">Superior completo</option>
+                </select>
+            </div>
+    
+            <!-- Bloco 2: Situação educacional atual -->
+            <!-- Define quais campos abaixo serão exibidos -->
+            <div>
+                <label for="situacao_educacional">Qual sua situação educacional atual?</label>
+                <select name="situacao_educacional" id="situacao_educacional" required>
+                    <option value="">Selecione</option>
+                    <option value="cursando">Estou estudando atualmente</option>
+                    <option value="concluido">Já concluí meus estudos</option>
+                    <option value="nao_estuda">Nunca estudei / Ensino básico incompleto</option>
+                </select>
+            </div>
+    
+            <!-- Bloco 3: Para quem está estudando atualmente -->
+            <div id="educacao_cursando" class="escondido">
+                <label for="curso_cursando">Qual curso está fazendo?</label>
+                <input type="text" name="curso_cursando" id="curso_cursando">
+    
+                <label for="instituicao_cursando">Nome da instituição:</label>
+                <input type="text" name="instituicao_cursando" id="instituicao_cursando">
+    
+                <label for="turno">Turno:</label>
+                <select name="turno" id="turno">
+                    <option value="">Selecione</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                    <option value="integral">Integral</option>
+                </select>
+    
+                <label for="previsao_conclusao">Previsão de Conclusão:</label>
+                <input type="month" name="previsao_conclusao" id="previsao_conclusao">
+            </div>
+    
+            <!-- Bloco 4: Para quem já concluiu os estudos -->
+            <div id="educacao_concluida" class="escondido">
+                <label for="curso_concluido">Qual curso você concluiu?</label>
+                <input type="text" name="curso_concluido" id="curso_concluido">
+    
+                <label for="instituicao_concluida">Nome da instituição:</label>
+                <input type="text" name="instituicao_concluida" id="instituicao_concluida">
+    
+                <label for="ano_conclusao">Ano de Conclusão:</label>
+                <input type="number" name="ano_conclusao" id="ano_conclusao" min="1900" max="2100">
+            </div>
+    
+        </div>
+    
+        <div class="botoes">
+            <button type="button" onclick="voltarEtapa()">Voltar</button>
+            <button type="button" onclick="proximaEtapa()">Continuar</button>
+        </div>
+    </div>
+    
+    <div class="step">
+        <h2>Informações Profissionais</h2>
+        <p>Preencha as informações abaixo:</p>
+    
+        <div class="inputs-container">
+            <div>
+                <label for="experiencia">Já teve alguma experiência informal?</label>
+                <select id="experiencia" name="experiencia" required>
+                    <option value="">Selecione</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+    
+            <div id="descricao_experiencia_container" class="escondido" style="grid-column: span 2;">
+                <label for="descricao_experiencia">Descreva sua experiência informal:</label>
+                <textarea id="descricao_experiencia" name="descricao_experiencia" rows="4" style="width: 100%; resize: vertical;"></textarea>
+            </div>
+    
+            <div>
+                <label for="area_interesse">Área de Interesse:</label>
+                <input type="text" id="area_interesse" name="area_interesse" placeholder="Ex: Atendimento, Vendas..." required>
+            </div>
+    
+            <div>
+                <label for="habilidades">Habilidades:</label>
+                <input type="text" id="habilidades" name="habilidades" placeholder="Ex: Comunicação, Trabalho em equipe..." required>
+            </div>
+    
+            <div>
+                <label for="disponibilidade">Disponibilidade de Horário:</label>
+                <input type="text" id="disponibilidade" name="disponibilidade" placeholder="Ex: Manhã, Tarde, Integral..." required>
+            </div>
+        </div>
+    
+        <div class="botoes">
+            <button type="button" onclick="voltarEtapa()">Voltar</button>
+            <button type="submit">Concluir Cadastro</button>
+        </div>
+    </div>
+    
+    
+    </div>
+  </form>
+
+<script src="script.js"></script>
+
+<script>
+    // Redireciona para index.html ao concluir cadastro
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+        event.preventDefault();
+        window.location.href = 'index.html';
+    });
+</script>
+
+</body>
+</html>

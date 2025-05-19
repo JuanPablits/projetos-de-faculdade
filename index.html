@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="imagens/favicon.png" type="image/png" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap" rel="stylesheet" />
+    <title>Esculp</title>
+</head>
+<body>
+    <img src="imagens/imgsuperior.svg" alt="Escultura" id="escultura-img" />
+
+    <header class="site-header">
+        <a href="/" class="icone-container">
+            <img src="imagens/icone.png" alt="Logo do Site" class="site-logo" />
+            <span class="site-nome">Esculp</span>
+        </a>
+
+        <div class="botoes">
+            <!-- Link modificado para abrir modal -->
+            <a href="#" id="crie-conta" class="botao">registrar-se</a>
+        </div>
+    </header>
+
+    <section class="login-container">
+        <h1>De o primeiro passo na sua carreira com apoio e oportunidade.</h1>
+
+        <form class="login-form" id="loginForm">
+            <h2>Insira o e-mail ou CNPJ</h2>
+            <input type="text" placeholder="" required />
+            <h2>Insira a senha</h2>
+            <input type="password" placeholder=" " required />
+            <button type="submit">
+                <h1>Entrar</h1>
+            </button>
+            <div class="divisor">
+                <div class="divisor-line"></div>
+                <div class="divisor-texto">ou</div>
+                <div class="divisor-line"></div>
+            </div>
+            <h2 id="primeira-vez">
+                Primeira vez aqui? <a href="#" id="crie-conta-link">Crie a sua conta</a>
+            </h2>
+        </form>
+
+        <div class="svg-inferior">
+            <img src="imagens/svg-inferior.svg" alt="decoração inferior esquerda" />
+        </div>
+    </section>
+
+    <section class="section-candidatos">
+        <div class="textos-superiores">
+            <h1 class="titulos">Oportunidade para quem quer começar!</h1>
+            <p>
+                Aqui damos voz e vez a quem ainda não teve chance de mostrar seu potencial. Acreditamos que nenhuma
+                experiência é pequena demais e que todo mundo merece uma primeira oportunidade.
+            </p>
+        </div>
+
+        <div class="para-candidatos">
+            <div class="circles-container">
+                <div class="circle-item">
+                    <div class="circle">
+                        <img src="imagens/bandeira.png" alt="imagem de uma badeira de corrida" />
+                    </div>
+                    <h3>Para quem está começando</h3>
+                    <p>ideial para quem não tem experiência profissional ou acadêmica</p>
+                </div>
+
+                <div class="circle-item">
+                    <div class="circle">
+                        <img src="imagens/maleta.png" alt="imagem de uma badeira de corrida" />
+                    </div>
+                    <h3>Oportunidades reais</h3>
+                    <p>empresas dispostas a ensinar, treinar e formar novos talentos</p>
+                </div>
+
+                <div class="circle-item">
+                    <div class="circle">
+                        <img src="imagens/prancheta.png" alt="imagem de uma badeira de corrida" />
+                    </div>
+                    <h3>Cadastro facil e gratuito</h3>
+                    <p>crie seu perfil em minutos e comece a se candidatar</p>
+                </div>
+
+                <div class="circle-item">
+                    <div class="circle">
+                        <img src="imagens/seta.png" alt="imagem de uma badeira de corrida" />
+                    </div>
+                    <h3>Inclusão e crescimento</h3>
+                    <p>seu esforço e vontade de aprender são o que mais importa aqui</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="para-empresa">
+        <h1 class="titulos">Oportunidade para se apresentar a sua empresa!</h1>
+        <div class="underline"></div>
+        <p>
+            Os candidatos estão visitando a página da sua empresa no Esculp. Controle a narrativa e mostre a eles por
+            que eles devem fazer parte de sua equipe.
+        </p>
+    </section>
+
+    <footer>
+        <p><strong>Contato:</strong> EmpresaEsculp@gmail.com</p>
+        <p><strong>Busque por:</strong> Empresas, Vagas, Oportunidade</p>
+        <strong
+            >Copyright © 2025. Esculp LLC. “Esculp” o logotipo do Esculp são marcas comerciais pertencentes à Esculp LLC.</strong
+        >
+    </footer>
+
+    <!-- Modal -->
+    <div
+        id="tipoCadastroModal"
+        class="modal"
+        style="
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        "
+    >
+        <div
+            style="
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                width: 90%;
+                max-width: 400px;
+                text-align: center;
+            "
+        >
+            <h2>Você é um candidato ou uma empresa?</h2>
+            <div style="margin-top: 20px;">
+                <button
+                    id="btnCandidato"
+                    style="padding: 10px 20px; margin-right: 10px; cursor: pointer"
+                >
+                    Candidato
+                </button>
+                <button id="btnEmpresa" style="padding: 10px 20px; cursor: pointer">Empresa</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Elements
+        const modal = document.getElementById('tipoCadastroModal');
+        const linkCriarConta = document.getElementById('crie-conta');
+        const linkCriarConta2 = document.getElementById('crie-conta-link');
+        const btnCandidato = document.getElementById('btnCandidato');
+        const btnEmpresa = document.getElementById('btnEmpresa');
+
+        // Open modal on clicking registrar-se or Crie a sua conta
+        linkCriarConta.addEventListener('click', function (event) {
+            event.preventDefault();
+            modal.style.display = 'flex';
+        });
+        linkCriarConta2.addEventListener('click', function (event) {
+            event.preventDefault();
+            modal.style.display = 'flex';
+        });
+
+        // Redirect based on selection
+        btnCandidato.addEventListener('click', function () {
+            window.location.href = 'cadastro-estudante.html';
+        });
+        btnEmpresa.addEventListener('click', function () {
+            window.location.href = 'cadastro.html';
+        });
+
+        // Close modal if clicked outside box
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Login form submission redirect
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // previne o envio padrão
+            // Aqui pode validar os dados do login, mas como pediu só redireciona direto
+            window.location.href = 'vagas.html';
+        });
+    </script>
+</body>
+</html>
