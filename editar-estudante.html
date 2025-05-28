@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="editar.css" />
+    <link rel="icon" href="imagens/favicon.png" type="image/png" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap" rel="stylesheet" />
+    <title>Esculp</title>
+</head>
+  
+<body>
+  
+  <header class="site-header">
+        <a href="procurarVagas.html" class="icone-container">
+            <img src="imagens/icone.png" alt="Logo do Site" class="site-logo" />
+            <span class="site-nome">Esculp</span>
+        </a>
+  </header>
+  
+  <div class="container">
+    <h1>Editar Perfil</h1>
+    
+    <form class="formulario">
+      <section>
+        <h2>Dados Pessoais</h2>
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required />
+        
+        <label for="Data de nascimento">Data de nascimento:</label>
+        <input type="date" id="Data-nascimento" name="Data de nascimento" required="">
+        
+        <label for="CPF">CPF:</label>
+        <input type="text" id="cpf" name="cpf" maxlength="14" required="">
+        
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required="">
+
+        <label for="Bairro">Bairro</label>
+        <input type="text" id="Bairro" name="Bairro" />
+        
+        <label for="Rua">Rua:</label>
+        <input type="text" id="Rua" name="Rua" required="">
+        
+        <label for="Número">Número:</label>
+        <input type="text" id="Numero" name="Número" required="">
+        
+        <label for="Cidade">Cidade:</label>
+        <input type="text" id="Cidade" name="Cidade" required="">
+        
+        <label for="Estado">Estado:</label>
+        <input type="text" id="Estado" name="Estado" required="">
+        
+      </section>
+
+      <section>
+        <h2>Informações Profissionais</h2>
+        <label for="area_interesse">Área de Interesse:</label>
+        <input type="text" id="area_interesse" name="area_interesse" placeholder="Ex: Atendimento, Vendas..." required="">
+        
+        <label for="habilidades">Habilidades:</label>
+        <input type="text" id="habilidades" name="habilidades" placeholder="Ex: Comunicação, Trabalho em equipe..." required="">
+        
+        <label for="disponibilidade">Disponibilidade de Horário:</label>
+        <input type="text" id="disponibilidade" name="disponibilidade" placeholder="Ex: Manhã, Tarde, Integral..." required="">
+        
+        
+      </section>
+
+      <section>
+        <h2>Formação Acadêmica</h2>
+        <label for="instituicao">Instituição</label>
+        <input type="text" id="instituicao" name="instituicao" />
+
+        <label for="curso">Curso</label>
+        <input type="text" id="curso" name="curso" />
+
+        <label for="ano-conclusao">Ano de Conclusão</label>
+        <input type="text" id="ano-conclusao" name="ano-conclusao" />
+      </section>
+
+      <button type="submit">Salvar Alterações</button>
+   <div id="mensagem-sucesso" class="mensagem-sucesso oculto">
+  ✔ Perfil editado com sucesso!
+</div>
+
+    </form>
+  </div>
+  <script>
+  const formulario = document.querySelector('.formulario');
+  const mensagem = document.getElementById('mensagem-sucesso');
+
+  formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    mensagem.classList.add('mostrar');
+
+    // Oculta a mensagem após 3 segundos
+    setTimeout(() => {
+      mensagem.classList.remove('mostrar');
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>

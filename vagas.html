@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Esculp - Vagas</title>
+  <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="vagas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="procurarVagas.html" class="icone-container">
+        <img src="imagens/icone.png" alt="Logo do Site" class="site-logo">
+        <span class="site-nome">Esculp</span>
+    </a>
+
+    <a href="editar-estudante.html" class="icone-perfil" title="Perfil">
+    <svg xmlns="http://www.w3.org/2000/svg" class="perfil-icon" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
+      1.79-4 4 1.79 4 4 4zm0 2c-2.67 
+      0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>
+  </a>
+
+  </header>
+
+  <div class="search-bar">
+    <input  id="vaga" type="text" placeholder="Procure por cargo, vaga ou setor">
+    <input id="localizacao" type="text" placeholder="Cidade, estado ou 'remoto'">
+  </div>
+  
+  <main>
+  <!-- Coluna de vagas -->
+<div id="vagas" class="vagas-lista">
+  <div class="card" onclick="mostrarDetalhes(0)">
+    <div class="card-top">
+      <h3>Técnico em suporte de TI</h3>
+      <span>Global Tech</span>
+    </div>
+
+    <div class="tags">
+      <div class="tag">Brasília</div>
+      <div class="tag">Tecnologia</div>
+      <div class="tag">Fevereiro 2024</div>
+    </div>
+    <p>
+    A Global Tech está em busca de um Técnico em Suporte de TI para fornecer suporte técnico de alta qualidade aos...</p>
+
+    <div class="card-footer">
+      <span> Postado a 2 dias</span>
+      <span class="salario"> R$ 3.200,00</span>
+    </div>
+  </div>
+
+  <div class="card" onclick="mostrarDetalhes(1)">
+    <div class="card-top">
+        <h3>Assistente Administrativo</h3>
+        <span>Future Corp</span>
+    </div>
+
+    <div class="tags">
+      <div class="tag">São Paulo</div>
+      <div class="tag">Administrativo</div>
+      <div class="tag">Março 2024</div>
+    </div>
+
+    <p>Auxiliar nas rotinas administrativas e apoio ao setor financeiro...</p>
+    <div class="card-footer">
+      <span>Postado a 3 dias</span>
+      <span class="salario">R$ 2.500,00</span>
+    </div>
+  </div>
+</div>
+
+    <!-- Coluna de detalhes -->
+    <div id="detalhes-vaga" class="vaga-detalhes">
+      <p class="placeholder">Clique em uma vaga para ver os detalhes</p>
+    </div>
+  </main>
+
+  <footer>
+        <p><strong>Contato:</strong> EmpresaEsculp@gmail.com</p>
+        <p><strong>Busque por:</strong> Empresas, Vagas, Oportunidade</p>
+        <strong
+            >Copyright © 2025. Esculp LLC. “Esculp” o logotipo do Esculp são marcas comerciais pertencentes à Esculp LLC.</strong>
+    </footer>
+
+  <script>
+    const vagas = [
+      {
+        titulo: "Secretário Executivo",
+        empresa: "Omega Services",
+        descricao: `
+          <section class="details">
+            <h4>📄 Descrição da vaga</h4>
+            <p>
+              A Omega Services está procurando um Secretário Executivo organizado e eficiente para dar suporte à nossa equipe de executivos. O candidato ideal será responsável por gerenciar agendas, organizar reuniões, preparar relatórios e atuar como ponto de contato entre a diretoria e outros departamentos.<br>
+              <br>
+              <strong>Início:</strong> Fevereiro de 2024
+            </p>
+          </section>
+          <section class="details">
+            <h4>🧭 Responsabilidades</h4>
+            <ul>
+              <li>Gerenciar agendas e compromissos dos executivos</li>
+              <li>Organizar reuniões e atas</li>
+              <li>Preparar relatórios e apresentações</li>
+              <li>Coordenar viagens e hospedagens</li>
+              <li>Manter e organizar arquivos e documentos confidenciais</li>
+              <li>Realizar tarefas administrativas gerais para apoiar a equipe executiva</li>
+            </ul>
+          </section>
+          <section class="details">
+            <h4>📝 Requisitos</h4>
+            <ul>
+              <li>Graduação em Administração ou áreas afins</li>
+              <li>Proficiente em MS Office (Word, Excel, PowerPoint)</li>
+              <li>Excelentes habilidades organizacionais</li>
+            </ul>
+          </section>
+          <div class="botoes-acao">
+            <button class="btn-candidatar">Candidatar-se</button>
+            <button class="btn-salvar">Salvar vaga</button>
+          </div>
+        `
+      },
+      {
+        titulo: "Assistente Administrativo",
+        empresa: "Future Corp",
+        descricao: `
+          <section class="details">
+            <h4>📄 Descrição da vaga</h4>
+            <p>
+              Atuar nas rotinas administrativas da empresa, apoiando o setor financeiro, RH e atendimento.<br><br>
+              <strong>Início:</strong> Março de 2024
+            </p>
+          </section>
+          <section class="details">
+            <h4>🧭 Responsabilidades</h4>
+            <ul>
+              <li>Lançamento de dados em planilhas</li>
+              <li>Atendimento telefônico e presencial</li>
+              <li>Organização de documentos</li>
+            </ul>
+          </section>
+          <section class="details">
+            <h4>📝 Requisitos</h4>
+            <ul>
+              <li>Ensino médio completo</li>
+              <li>Conhecimento básico em Excel</li>
+              <li>Boa comunicação</li>
+            </ul>
+          </section>
+          <div class="botoes-acao">
+            <button class="btn-candidatar">Candidatar-se</button>
+            <button class="btn-salvar">Salvar vaga</button>
+          </div>
+        `
+      }
+    ];
+
+    function mostrarDetalhes(index) {
+      const container = document.getElementById("detalhes-vaga");
+      container.innerHTML = vagas[index].descricao;
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn-candidatar {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .btn-salvar {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .botoes-acao {
+      margin-top: 20px;
+    }
+
+    /* Restante dos estilos fica no seu style.css */
+  </style>
+
+</body>
+</html>

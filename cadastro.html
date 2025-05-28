@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/favicon.png" type="image/png">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap" rel="stylesheet">
+    <title>Esculp - Cadastro de Empresa</title>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="icone-container">
+        <img src="imagens/icone.png" alt="Logo do Site" class="site-logo">
+        <span class="site-nome">Esculp</span>
+    </a>
+</header>
+
+<h1 id="h1-cadastro">Conecte sua empresa a novos talentos</h1>
+<p id="p-cadastro">Cadastre sua empresa gratuitamente e encontre jovens profissionais prontos para crescer junto com você.</p>
+
+<form id="formulario">
+    <div class="step active"> <!-- primeiro, informações de acesso básicas -->
+        <h2>Informações de Acesso</h2>
+        <p>Preencha as informações abaixo:</p>
+
+        <div class="inputs-container">
+
+            <div>
+                <label for="email_empresa">E-mail corporativo:</label>
+                <input type="email" id="email_empresa" required />
+            </div>
+
+            <div>
+                <label for="senha_empresa">Senha:</label>
+                <input type="password" id="senha_empresa" required />
+            </div>
+
+            <div>
+                <label for="confirmar_senha_empresa">Confirme sua senha:</label>
+                <input type="password" id="confirmar_senha_empresa" required />
+            </div>
+
+            <div>
+                <label for="telefone_empresa">Telefone para contato:</label>
+                <input type="tel" id="telefone_empresa" name="telefone_empresa" required />
+            </div>
+
+        </div>
+
+        <button type="button" onclick="proximaEtapa()">Continuar</button>
+    </div>
+
+    <div class="step"> <!-- segundo, dados da empresa e área de atuação -->
+        <h2>Dados da Empresa</h2>
+        <p>Preencha as informações abaixo:</p>
+
+        <div class="inputs-container">
+
+            <div>
+                <label for="cnpj">CNPJ da empresa:</label>
+                <input type="text" id="cnpj" name="cnpj" required maxlength="18" />
+            </div>
+
+            <div>
+                <label for="nome_empresa">Nome da empresa:</label>
+                <input type="text" id="nome_empresa" name="nome_empresa" required />
+            </div>
+
+            <div>
+               <label for="area_atuacao">Área de atuação:</label>
+                    <select id="area_atuacao" name="area_atuacao" required>
+                        <option value="">Selecione</option>
+                        <option value="administracao">Administração</option>
+                        <option value="tecnologia">Tecnologia da Informação</option>
+                        <option value="comercio">Comércio / Varejo</option>
+                        <option value="educacao">Educação</option>
+                        <option value="saude">Saúde</option>
+                        <option value="industria">Indústria</option>
+                        <option value="servicos">Serviços Gerais</option>
+                        <option value="outros">Outros</option>
+                    </select>
+            </div>
+
+            <div>
+                <label for="cidade_empresa">Cidade:</label>
+                <input type="text" id="cidade_empresa" name="cidade_empresa" required />
+            </div>
+
+            <div>
+                <label for="estado_empresa">Estado:</label>
+                <input type="text" id="estado_empresa" name="estado_empresa" required />
+            </div>
+
+        </div>
+
+        <div class="botoes">
+            <button type="button" onclick="voltarEtapa()">Voltar</button>
+            <button type="submit">Concluir Cadastro</button>
+        </div>
+    </div>
+</form>
+
+<script src="script.js"></script>
+<script>
+    // Redireciona para index.html ao concluir cadastro
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+        event.preventDefault();
+        window.location.href = 'index.html';
+    });
+</script>
+
+</body>
+</html>

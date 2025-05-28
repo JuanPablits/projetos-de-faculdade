@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Vaga</title>
+  <link rel="stylesheet" href="cria-vagas.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#" class="icone-container">
+      <img src="imagens/image.png" alt="Logo do site" class="site-logo">
+      <span class="site-nome">Esculp</span>
+    </a>
+  </header>
+
+  <main class="form-container">
+    <form action="#" method="POST" class="form-vaga">
+
+      <div class="campo">
+        <label for="titulo">Título da Vaga</label>
+        <input type="text" id="titulo" name="titulo" required>
+      </div>
+
+      <div class="campo">
+        <label for="local">Localização</label>
+        <input type="text" id="local" name="local">
+      </div>
+
+      <div class="campo">
+        <label for="salario">Faixa Salarial</label>
+        <input type="text" id="salario" name="salario">
+      </div>
+
+      <div class="campo">
+        <label for="descricao">Descrição da Vaga</label>
+        <textarea id="descricao" name="descricao" rows="6" placeholder="Descreva as atividades, requisitos, carga horária etc."></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="beneficios">Benefícios</label>
+        <textarea id="beneficios" name="beneficios" rows="4" placeholder="Vale transporte, alimentação, plano de saúde etc."></textarea>
+      </div>
+
+      <button type="submit">Publicar Vaga</button>
+
+<script>
+  const form = document.querySelector('.form-vaga');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    window.location.href = 'home-empresa.html';
+  });
+</script>
+
+    </form>
+  </main>
+</body>
+</html>
