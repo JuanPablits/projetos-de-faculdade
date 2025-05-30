@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #f4f4f4;
+    color: #2755F8;
+    padding: 1em 0;
+}
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; 
+    font-size: 2em; /* Exemplo, ajuste conforme necessário */
+}
+
+header h1 img {
+    height: 50px; /* Ajuste conforme o tamanho da sua logo */
+    margin-right: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button, .btn-acao {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button:hover, .btn-acao:hover {
+    background-color: #0056b3;
+}
+
+.btn-editar {
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-editar:hover {
+    background-color: #e0a800;
+}
+
+.btn-pausar {
+    background-color: #fd7e14;
+}
+.btn-pausar:hover {
+    background-color: #e06200;
+}
+
+.btn-encerrar {
+    background-color: #dc3545;
+}
+.btn-encerrar:hover {
+    background-color: #c82333;
+}
+
+.btn-voltar {
+    background-color: #6c757d;
+    margin-bottom: 15px;
+}
+.btn-voltar:hover {
+    background-color: #5a6268;
+}
+
+.status-ativa {
+    color: green;
+    font-weight: bold;
+}
+.status-pausada {
+    color: orange;
+    font-weight: bold;
+}
+.status-encerrada {
+    color: red;
+    font-weight: bold;
+}
+
+.botoes-acao-gerais {
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.filtros-candidatos {
+    margin-bottom: 15px;
+}
+
+.filtros-candidatos label {
+    margin-right: 5px;
+}
+
+.filtros-candidatos select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #000000;
+    margin-top: 30px;
+}
+.btn-voltar-home {
+    display: inline-block; 
+    padding: 10px 15px;
+    background-color: #007bff; 
+    color: white;
+    text-decoration: none; 
+    border-radius: 4px;
+    font-size: 14px;
+    border: none; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-voltar-home:hover {
+    background-color: #0056b3;
+}

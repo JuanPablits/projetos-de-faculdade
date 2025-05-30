@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Vagas e Candidatos</title>
+    <link rel="stylesheet" href="ver-vagas.css"> </head>
+<body>
+    <header>
+        <h1> <img src="imagens/image.png" alt="Logo da Esculp"> Esculp</h1>
+    </header>
+
+    <div style="width: 90%; max-width: 1200px; margin: 15px auto 0 auto; padding: 0 20px;">
+        <a href="home-empresa.html" class="btn-voltar-home">← Voltar para o Painel Principal</a>
+    </div>
+    <main>
+        <section id="lista-vagas-section">
+            <h2>Minhas Vagas Criadas</h2>
+            <div class="botoes-acao-gerais">
+                <button id="btnNovaVaga">Criar Nova Vaga</button>
+            </div>
+            <table id="tabela-vagas">
+                <thead>
+                    <tr>
+                        <th>Título da Vaga</th>
+                        <th>Status</th>
+                        <th>Candidatos</th>
+                        <th>Data de Criação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+        <hr>
+
+        <section id="detalhes-vaga-candidatos-section" style="display: none;">
+            <button id="btnVoltarParaListaVagas" class="btn-voltar">← Voltar para Lista de Vagas</button>
+            <h2 id="titulo-vaga-selecionada"></h2>
+            <p id="status-vaga-selecionada"></p>
+            <p id="descricao-resumo-vaga"></p>
+
+            <h3>Candidatos Inscritos</h3>
+            <div class="filtros-candidatos">
+                <label for="filtro-status-candidato">Filtrar por status:</label>
+                <select id="filtro-status-candidato">
+                    <option value="todos">Todos</option>
+                    <option value="novo">Novo</option>
+                    <option value="em_analise">Em Análise</option>
+                    <option value="contatado">Contatado</option>
+                    <option value="aprovado">Aprovado</option>
+                    <option value="rejeitado">Rejeitado</option>
+                </select>
+            </div>
+            <table id="tabela-candidatos">
+                <thead>
+                    <tr>
+                        <th>Nome do Candidato</th>
+                        <th>Título Profissional</th>
+                        <th>Data da Candidatura</th>
+                        <th>Status Empresa</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Copyright © 2025. Esculp LLC. “Esculp” o logotipo do Esculp são marcas comerciais pertencentes à Esculp LLC.</strong></p>
+    </footer>
+
+    <script src="js/script_vagas.js"></script>
+</body>
+</html>
